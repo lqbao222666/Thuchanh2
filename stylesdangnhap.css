@@ -1,0 +1,249 @@
+body {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1024px;
+  display: grid;
+  grid-template-areas:
+    "header-cell"
+    "nav-cell"
+    "main-cell"
+    "footer-cell";
+}
+main,
+header,
+footer {
+  border: 1px solid #ccc7c8;
+  background-color: #fff;
+  border-radius: 5px;
+}
+header {
+  grid-area: header-cell;
+  background-image: url(./images/header.png);
+}
+nav {
+  grid-area: nav-cell;
+}
+main {
+  grid-area: main-cell;
+}
+/*1 cột*/
+main.one-col {
+  display: grid;
+  grid-template-areas:
+    "left-cell"
+    "article-cell"
+    "right-cell";
+}
+/*2 cols*/
+main.two-cols-left {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "left-cell article-cell";
+}
+main.two-cols-right {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "article-cell right-cell";
+}
+main.three-cols {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "left-cell article-cell right-cell";
+}
+footer {
+  grid-area: footer-cell;
+}
+header {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc7c8;
+  /* padding: 0 5px; */
+  margin: 0 0 2px 0;
+}
+
+#header-img1 {
+  height: 100px;
+  top: -30px;
+  position: absolute;
+  animation: moveImage1 3s forwards;
+}
+@keyframes moveImage1 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 30%;
+  }
+}
+#header-img2 {
+  height: 70px;
+  top: -5px;
+  position: absolute;
+  animation: moveImage2 3s forwards;
+}
+@keyframes moveImage2 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 45%;
+  }
+}
+#header-img3 {
+  height: 80px;
+  top: 0px;
+  position: absolute;
+  animation: moveImage3 3s forwards;
+}
+@keyframes moveImage3 {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 63%;
+  }
+}
+nav {
+  grid-area: nav-cell;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+nav a {
+  float: left;
+  margin: 3px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 2px 4px;
+  height: 20px;
+  background: #ffffff80;
+  color: #ed4190;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 0 3px 0 #00000066, 0 0 2px 0 #0000004d;
+}
+
+nav a:hover {
+  color: #fff;
+  background-color: #ed4190;
+}
+
+.search-container {
+  float: right;
+  padding-top: 3px;
+}
+
+.icon-pink,
+.icon-white {
+  padding: 4px;
+  background-color: #cddc39;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.icon-pink {
+  color: #ed4190;
+}
+
+/* Căn giữa nội dung trong footer */
+footer {
+  margin-top: 2px;
+  padding: 0 5px;
+  border: 1px solid #ccc7c8;
+  color: #000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung trong footer */
+  align-items: center;
+  position: relative;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Khoảng cách giữa các icon */
+}
+
+/* Định dạng icon liên kết mạng xã hội */
+footer a.social-icon {
+  display: inline-block;
+  color: #ed4190;
+  text-decoration: none;
+}
+
+/* Căn phải nút 'về đầu trang' */
+footer a.gotop {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+}
+
+footer a.gotop img {
+  width: 60px;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  color: #f9086d;
+  position: relative;
+  margin: 12px 0 16px;
+  text-align: center;
+}
+
+/* Đường gạch dưới cho tiêu đề chính */
+h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: radial-gradient(circle, #cddc39, #fff);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) skewX(-12deg);
+  top: 100%;
+}
+
+/* Tiêu đề phụ */
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #f90b6d;
+  margin: 5px 0 10px;
+  text-align: left;
+}
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f9086d;
+  margin-bottom: 8px;
+  text-align: left;
+}
+main.one-col .left-cell {
+  height: 50px;
+  grid-area: left-cell;
+}
+main.one-col .article-cell {
+  border: 1px solid #ccc7c8;
+  max-width: 100%;
+  margin: 5px;
+}
+main.one-col .article-cell form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+main.one-col .article-cell form img {
+  max-width: 40%;
+}
